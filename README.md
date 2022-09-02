@@ -2,10 +2,12 @@
 
 this is an Express.js Template with Typescript that you can use if you want to deploy Express.js App to Vercel
 
-<img src="https://img.shields.io/badge/vercel-success-success?labelColor=black&logo=vercel&style=flat" />
-<img src="https://img.shields.io/badge/typescript-%5E4.8.2-informational?labelColor=black&logo=typescript&style=flat" />
-<img src="https://img.shields.io/badge/node-%5E16.15.1-green?labelColor=black&logo=node.js&style=flat" />
-<img src="https://img.shields.io/badge/npm-%5E8.11.0-red?labelColor=black&logo=npm&style=flat" />
+<div align="left">
+  <a href="#"><img src="https://img.shields.io/badge/vercel-success-success?labelColor=black&logo=vercel&style=flat" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/typescript-%5E4.8.2-informational?labelColor=black&logo=typescript&style=flat" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/node-%5E16.15.1-green?labelColor=black&logo=node.js&style=flat" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/npm-%5E8.11.0-red?labelColor=black&logo=npm&style=flat" /></a>
+</div>
 
 ## Deployed App
 
