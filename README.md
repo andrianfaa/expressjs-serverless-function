@@ -23,7 +23,7 @@ You can see this project already deployed at this link
   git clone https://github.com/andrianfaa/expressjs-serverless-function
   ```
 
-  if you don't want to use TypeScript, you can use Javascript in Branch [`with-javascript`](https://github.com/andrianfaa/expresjs-serverless-function/tree/with-javascript)
+  if you don't want to use TypeScript, you can use Javascript in Branch [`with-javascript`](https://github.com/andrianfaa/expressjs-serverless-function/tree/with-javascript)
 
 - Install Dependencies
 
