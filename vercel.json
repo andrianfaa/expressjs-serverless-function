@@ -1,0 +1,38 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api"
+    }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "public": false,
+  "redirects": [
+    {
+      "source": "/src/(.*)",
+      "destination": "/api",
+      "permanent": true
+    },
+    {
+      "source": "/src",
+      "destination": "/api",
+      "permanent": true
+    },
+    {
+      "source": "/api/index.js",
+      "destination": "/api",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "destination": "/api",
+      "permanent": true
+    },
+    {
+      "source": "/start.js",
+      "destination": "/api",
+      "permanent": true
+    }
+  ]
+}
