@@ -1,23 +1,19 @@
-import { Request, Response, NextFunction } from "express";
-
 /**
  * Custom SendResponse Middleware
  * @description Middlewares that adds the SendResponse function to the Response object
- * @param _req Express Request Object
+ * @param _ Express Request Object
  * @param res Express Response Object
  * @param next Express Next Function
  */
-export const SendResponseMiddleware = (
-    _req: Request,
-    res: Response,
-    next: NextFunction
-) => {
-    // set SendResponse function to response object
-    res.sendResponse = <T = null>(
-        type: "success" | "error" | "failed",
-        statusCode: number,
-        options: SendResponseType<T>
-    ): Response => {
+const SendResponseMiddleware = () => (_, res, next) => {
+    /**
+     * SendResponse function
+     * @param {*} type `success` or `error`
+     * @param {*} statusCode 200, 400, 401, 403, 500, etc.
+     * @param {*} options
+     * @returns
+     */
+    res.sendResponse = (type, statusCode, options) => {
         const { message, data } = options;
 
         return res
@@ -34,3 +30,5 @@ export const SendResponseMiddleware = (
 
     next();
 };
+
+module.exports = SendResponseMiddleware;

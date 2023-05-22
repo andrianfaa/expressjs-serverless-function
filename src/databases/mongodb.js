@@ -1,10 +1,11 @@
-import mongoose from "mongoose";
+// import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 /**
  * Connect to MongoDB
  * @param url MongoDB URL
  */
-export async function ConnectDB(url: string) {
+async function ConnectDB(url) {
     try {
         await mongoose
             .connect(url)
@@ -13,3 +14,5 @@ export async function ConnectDB(url: string) {
         console.error(error);
     }
 }
+
+module.exports = ConnectDB;

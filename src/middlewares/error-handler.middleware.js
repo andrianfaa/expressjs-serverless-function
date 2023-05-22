@@ -1,8 +1,6 @@
-import { type Request, type Response, type NextFunction } from "express";
-
-export const ErrorHandlerMiddleware =
+const ErrorHandlerMiddleware =
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    () => (error: any, _: Request, res: Response, next: NextFunction) => {
+    () => (error, _, res, next) => {
         if (error) {
             res.sendResponse(
                 "error",
@@ -16,3 +14,5 @@ export const ErrorHandlerMiddleware =
 
         next();
     };
+
+module.exports = ErrorHandlerMiddleware;

@@ -1,20 +1,26 @@
-/// <reference types="../express-env" />
+// import bodyParser from "body-parser";
+// import cors from "cors";
+// import dotenv from "dotenv";
+// import express from "express";
+// import helmet from "helmet";
+// import http from "http";
+// import morgan from "morgan";
+// import path from "path";
+const express = require("express");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const dotenv = require("dotenv");
+const helmet = require("helmet");
+const http = require("http");
+const morgan = require("morgan");
+const path = require("path");
 
-import bodyParser from "body-parser";
-import cors, { type CorsOptions } from "cors";
-import dotenv from "dotenv";
-import express, { type Request, type Response } from "express";
-import helmet from "helmet";
-import http from "http";
-import morgan from "morgan";
-import path from "path";
-
-import {
+// const { ConnectDB } = require("../src/databases");
+const routes = require("../src/routes");
+const {
     ErrorHandlerMiddleware,
     SendResponseMiddleware
-} from "../src/middlewares";
-import routes from "../src/routes";
-// import { ConnectDB } from "../src/databases";
+} = require("../src/middlewares");
 
 // Load environment variables
 dotenv.config({
@@ -30,7 +36,7 @@ dotenv.config({
 
 const app = express();
 const server = http.createServer(app);
-const corsOptions: CorsOptions = {
+const corsOptions = {
     origin: "*"
 };
 
@@ -42,13 +48,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors(corsOptions));
 app.use(helmet());
 app.use(morgan("dev"));
-app.use(SendResponseMiddleware);
+app.use(SendResponseMiddleware());
 
 /* API Route */
 app.use("/api", routes);
 
 /* Optional route */
-app.use("*", (_req: Request, res: Response) => {
+app.use("*", (_req, res) => {
     res.sendResponse("error", 404, {
         message: "route not found"
     });
@@ -57,4 +63,4 @@ app.use("*", (_req: Request, res: Response) => {
 /* Error Handler */
 app.use(ErrorHandlerMiddleware());
 
-export default server;
+module.exports = app;

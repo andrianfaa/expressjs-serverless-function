@@ -1,4 +1,4 @@
-import server from "./api";
+const server = require("./api");
 
 const port = process.env.PORT || process.env.NODE_ENV === "dev" ? 5000 : 3000;
 
