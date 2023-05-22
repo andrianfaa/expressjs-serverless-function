@@ -9,9 +9,8 @@
         "npm": "8.11.0"
     },
     "scripts": {
-        "start": "node ./build/start.js",
         "dev": "cross-env NODE_ENV=\"dev\" nodemon \"./start.js\"",
-        "build": "npm-run-all setup:production build:production",
+        "build": "npm-run-all setup:production",
         "postinstall": "npm run setup:development",
         "setup:development": "cross-env NODE_ENV=\"dev\" node \"./setup.js\"",
         "setup:production": "cross-env NODE_ENV=\"production\" node \"./setup.js\"",
