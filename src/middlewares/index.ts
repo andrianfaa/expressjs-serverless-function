@@ -1,1 +1,2 @@
-export * from "./response-middleware";
+export * from "./error-handler.middleware";
+export * from "./response.middleware";

@@ -10,13 +10,13 @@ import { Request, Response, NextFunction } from "express";
 export const SendResponseMiddleware = (
     _req: Request,
     res: Response,
-    next: NextFunction,
+    next: NextFunction
 ) => {
     // set SendResponse function to response object
     res.sendResponse = <T = null>(
         type: "success" | "error" | "failed",
         statusCode: number,
-        options: SendResponseType<T>,
+        options: SendResponseType<T>
     ): Response => {
         const { message, data } = options;
 
@@ -24,10 +24,11 @@ export const SendResponseMiddleware = (
             .status(statusCode)
             .json({
                 status: type === "success" ? "success" : "error/failed",
-                statusCode,
+                status_code: statusCode,
                 message,
-                data,
-            } as SendResponseType<T>)
+                data: data || null,
+                data_length: Array.isArray(data) ? data.length : undefined
+            })
             .end();
     };
 

@@ -1,12 +1,10 @@
 import fs from "fs";
 
 const templateEnv = `
-
 PORT=${process.env.NODE_ENV === "dev" ? 5000 : 3000}
 
 # MongoDB URI
-MONGODB_URI=""
-
+MONGODB_URL=""
 `;
 
 async function setupApp() {
