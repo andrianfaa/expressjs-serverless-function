@@ -3,7 +3,7 @@
     "version": "0.1.1",
     "description": "",
     "main": "index.js",
-    "type": "commonjs",
+    "type": "module",
     "engines": {
         "node": "16.15.1",
         "npm": "8.11.0"
@@ -13,6 +13,8 @@
         "dev": "cross-env NODE_ENV=\"dev\" nodemon \"./start.js\"",
         "build": "npm-run-all setup:production build:production",
         "postinstall": "npm run setup:development",
+        "setup:development": "cross-env NODE_ENV=\"dev\" node \"./setup.js\"",
+        "setup:production": "cross-env NODE_ENV=\"production\" node \"./setup.js\"",
         "lint": "eslint \"./**/*.js\"",
         "lint:fix": "eslint \"./**/*.js\" --fix"
     },
